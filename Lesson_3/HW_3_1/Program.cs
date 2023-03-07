@@ -11,7 +11,7 @@ Palindrome(num);
 
 void Palindrome(int num)
 {
-    if (num / 10000 == num % 10 || num1 / 1000 % 10 == num1 % 10 / 10)
+    if (num / 10000 == num % 10 && num1 / 1000 % 10 == num1 % 100 / 10)
         Console.Write("Это число палиндром!");
     else Console.Write("Это число НЕ палиндром!");
 }
