@@ -10,7 +10,7 @@ int B = int.Parse(Console.ReadLine()!);
 int result = A;
 for (int i = 1; B > i; i++)
 {
-       result = result * A; 
+    result = result * A; 
 }
 
 Console.WriteLine(result);
