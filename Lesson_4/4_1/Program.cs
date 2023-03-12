@@ -1,17 +1,19 @@
-﻿// Задача 4.0. НАпишите программу, которая принимает на вход число (А) и 
-// выдает сумму чисел от 1 до А. Используем цикл For.
-// 7 -> 28
-// 4 -> 10
-// 8 -> 36
+﻿// Задача 4.1 Напишите программу, которая принимает на вход чилсо и выдает количесвто цифр в числе.
+// 456 -> 3
+// 78 -> 2
+// 89126 -> 5
 
-int SumNum(int num)
-{
-    int all_sum = 0;
-    for (int i = 1; i <= num; i++)
-        all_sum += i;
-
-    return all_sum;
-}
-int A = int.Parse(Console.ReadLine()!);
-int result = SumNum(A);
-Console.WriteLine(result);
+ int LengthNum(int num)
+ {
+    int a = 0;
+    for (int i = 1; num > 0; i++)
+    {
+     num = num / 10; 
+     a++;
+    }
+    return a;
+ }
+ Console.WriteLine("Введите число: ");
+ int num = int.Parse(Console.ReadLine()!);
+ int result = LengthNum(num);
+ Console.WriteLine(result);
