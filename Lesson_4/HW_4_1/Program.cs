@@ -7,10 +7,26 @@ Console.WriteLine("Введите число A: ");
 int A = int.Parse(Console.ReadLine()!);
 Console.WriteLine("Введите число B: ");
 int B = int.Parse(Console.ReadLine()!);
-int result = A;
-for (int i = 1; B > i; i++)
+double result = Power(A, B);
+Console.WriteLine(result);
+
+double Power(int A, int B)
 {
-    result = result * A; 
+    double num = 1;
+    for (int i = 1; i <= B; i++)
+    {
+        num = num * A;
+    }
+    return num;
 }
 
-Console.WriteLine(result);
+
+
+
+// int result = A;
+// for (int i = 1; B > i; i++)
+// {
+//     result = result * A; 
+// }
+// Console.WriteLine(result);
+
