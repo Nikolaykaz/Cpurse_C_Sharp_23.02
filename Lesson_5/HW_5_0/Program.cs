@@ -3,12 +3,12 @@
 
 // Сняли показания пользователя о массиве.
 Console.Write("Сколько элементов будет в массиве? ");
-double num = int.Parse(Console.ReadLine()!);
+int num = int.Parse(Console.ReadLine()!);
 Console.Write("Какой будет диапазон чисел, каждого элемента массива? (Пример. От: 5 До: 30) ");
 Console.Write("От: ");
-double min = int.Parse(Console.ReadLine()!);
+double min = double.Parse(Console.ReadLine()!);
 Console.Write("До: ");
-double max = int.Parse(Console.ReadLine()!);
+double max = double.Parse(Console.ReadLine()!);
 
 // Описали, какой будет массив, сколько элементов, какой рандом каждого элемента.   
 double[] mass = Massive(num, min, max);
@@ -21,12 +21,12 @@ double diff = FindDifference(mass);
 Console.WriteLine($"Разница между максимальным и минимальным элементом массива: {diff}");
 
 // Заполнение массива по входным данным.
-double[] Massive(double num, double min, double max)
+double[] Massive(int num, double min, double max)
 {
     double[] numbers = new double[num];
     for (int i = 0; i < num; i++)
     {
-        numbers[i] = new Random().NextDouble(min, max);
+        numbers[i] = new Random().NextDouble() * max;
         Console.WriteLine(numbers[i]);
     }
     return numbers;
