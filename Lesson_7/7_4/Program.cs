@@ -1,8 +1,10 @@
-﻿// Задайте двумерный массив. Найдите сумму элементов главной диагонали.
-// 1 4 7
-// 5 9 2
-// 8 4 2
-// Сумма элементов главной диагонали: 1+9+2=12
+﻿// 4. Задайте двумерный массив. Введите элемент, и найдите первое его вхождение,
+// выведите позиции по горизонтали и вертикали, или напишите, что такого элемента нет.
+// 1 4 7 2 
+// 5 9 2 3
+// 8 4 2 4
+// Введенный элемент 2, результат: [1, 4]
+// Введенный элемент 6, результат: такого элемента нет.
 
 void Print(int[,] arr)
 {
@@ -27,17 +29,16 @@ int[,] MassNums(int row, int column, int from, int to)
     return arr;
 }
 
-int EvenPos(int[,] arr)
+string SearchNum(int[,] arr, int num)
 {
     int row = arr.GetLength(0);
     int column = arr.GetLength(1);
-    int sum = 0;
 
       for (int i = 0; i < row; i++)
         for (int j = 0; j < column; j++)
-        if(i==j)
-            sum = sum + arr[i, j];
-        return sum;
+        if(arr[i, j] == num)
+            return $"[{i+1},{j+1}]";
+        return "Такого числа нет!";
 }
 
 int row_num = int.Parse(Console.ReadLine()!);
@@ -47,5 +48,6 @@ int stop = int.Parse(Console.ReadLine()!);
 
 int[,] mass = MassNums(row_num, column_num, start, stop);
 Print(mass);
-int result = EvenPos(mass);
+int val = int.Parse(Console.ReadLine()!);
+string result = SearchNum(mass, val);
 Console.WriteLine(result);
