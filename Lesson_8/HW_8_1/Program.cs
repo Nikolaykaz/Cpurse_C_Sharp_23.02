@@ -10,7 +10,7 @@ FillArray(arr, min, max);
 Console.WriteLine("Исходный массив:");
 PrintArray(arr);
 SortArray(arr);
-Console.WriteLine("Отсортированный массив:");
+Console.WriteLine("Упорядоченный массив:");
 PrintArray(arr);
 
 void FillArray(int[,] arr, int min, int max)
@@ -37,27 +37,7 @@ void PrintArray(int[,] arr)
     Console.WriteLine();
   }
 }
-// Пузырьковый метод сортировки.
-// void SortArray(int[,] arr)
-// {
-//   for (int i = 0; i < arr.GetLength(0); i++)
-//   {
-//     for (int j = 0; j < arr.GetLength(1) - 1; j++)
-//     {
-//       for (int k = j + 1; k < arr.GetLength(1); k++)
-//       {
-//         if (arr[i, j] < arr[i, k])
-//         {
-//           int temp = arr[i, j];
-//           arr[i, j] = arr[i, k];
-//           arr[i, k] = temp;
-//         }
-//       }
-//     }
-//   }
-// }
 
-// Метод Картежей.
 void SortArray(int[,] arr)
 {
   for (int i = 0; i < arr.GetLength(0); i++)
@@ -68,7 +48,9 @@ void SortArray(int[,] arr)
       {
         if (arr[i, j] < arr[i, k])
         {
-          (arr[i, j], arr[i, k]) = (arr[i, k], arr[i, j]);
+          int temp = arr[i, j];
+          arr[i, j] = arr[i, k];
+          arr[i, k] = temp;
         }
       }
     }
