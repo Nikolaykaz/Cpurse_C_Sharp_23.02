@@ -4,6 +4,7 @@
 int m = 1; // значение M
 int n = 15; // значение N
 int sum = Sum(m, n);
+// Console.WriteLine($"Сумма чисел от {m} до {n} равна {sum}");
 Console.WriteLine("Сумма чисел от {0} до {1} равна {2}", m, n, sum);
 
 int Sum(int m, int n)
